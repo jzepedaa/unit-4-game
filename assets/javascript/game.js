@@ -1,48 +1,98 @@
 //display a random number between 19 - 120 in the "number to get" section
 
 //set up the balls with a random number between 1-12
-
 //make images buttons with numbers
 
-//make variable for the actual wins, losses, and the total score
-
 //make number add to eachother upon click and display in final total
+
+//make variable for the actual wins, losses, and the total score
 
 // add score to wins
 
 //add score to losses
 
-//reset function to clear total score and change the balls random number
-var randomNumber = Math.floor(Math.random() * 120 + 19);
-console.log(randomNumber);
-$("#randomNumber").text(randomNumber);
+var soccerBall = {
+  ballOne: {
+    name: "ballOne",
+    value: 0
+  },
+  ballTwo: {
+    name: "ballTwo",
+    value: 0
+  },
+  ballThree: {
+    name: "ballThree",
+    value: 0
+  },
+  ballFour: {
+    name: "ballFour",
+    value: 0
+  }
+};
+// console.log(soccerBall.ballOne);
 
-var ballNumber = Math.floor(Math.random() * 12 + 1);
-console.log(ballNumber);
-// var ballTwo = Math.floor(Math.random() * 12 + 1);
-// console.log(ballTwo);
-// var ballThree = Math.floor(Math.random() * 12 + 1);
-// console.log(ballThree);
-// var ballFour = Math.floor(Math.random() * 12 + 1);
-// console.log(ballFour);
+var winCount = 0;
+var lossCount = 0;
+var currentScore = 0;
 
-// Next we create a for loop to create crystals for every numberOption.
-for (var i = 0; i < ballNumber.length; i++) {
-  // For each iteration, we will create an imageCrystal
-  var ballImage = $("<img>");
+var getRandom = function(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+// console.log(getRandom(5, 20));
 
-  // First each crystal will be given the class ".crystal-image".
-  // This will allow the CSS to take effect.
-  ballImage.addClass("ball-image");
+var startGame = function() {
+  currentScore = 0;
+  numberToGet = getRandom(19, 120);
+  soccerBall.ballOne.value = getRandom(1, 12);
+  soccerBall.ballTwo.value = getRandom(1, 12);
+  soccerBall.ballThree.value = getRandom(1, 12);
+  soccerBall.ballFour.value = getRandom(1, 12);
 
-  // Each imageCrystal will be given a src link to the crystal image
-  ballImage.attr("src", "./assets/images/Soccer-Ball.png");
+  $("#finalScore").text(currentScore);
+  $("#numberToGet").text(numberToGet);
 
-  // Each imageCrystal will be given a data attribute called data-crystalValue.
-  // This data attribute will be set equal to the array value.
-  ballImage.attr("data-ballValue", ballNumber[i]);
+  console.log("ball one", soccerBall.ballOne.value);
+  console.log("ball two", soccerBall.ballTwo.value);
+  console.log("ball three", soccerBall.ballThree.value);
+  console.log("ball four", soccerBall.ballFour.value);
+  console.log("random target number", numberToGet);
+};
 
-  // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-  $(".balls").append(ballImage);
-}
-console.log(ballImage);
+var checkToWin = function() {
+  //comparing numberToGet to finalScore
+  if (currentScore > numberToGet) {
+    alert("lost");
+    lossCount++;
+    $("#numberLosses").text(lossCount);
+    startGame();
+  } else if (currentScore === numberToGet) {
+    alert("won");
+    winCount++;
+    $("#numberWins").text(winCount);
+    startGame();
+  }
+};
+
+var addClick = function(clickBall) {
+  currentScore += clickBall.value;
+  $("#finalScore").text(currentScore);
+  checkToWin();
+  // console.log(currentScore);
+};
+
+//Main Process
+
+startGame();
+
+$("#ballOne").click(function() {
+  addClick(soccerBall.ballOne);
+});
+$("#ballTwo").click(function() {
+  addClick(soccerBall.ballTwo);
+});
+$("#ballThree").click(function() {
+  addClick(soccerBall.ballThree);
+});
+$("#ballFour").click(function() {
+  addClick(soccerBall.ballFour);
+});
