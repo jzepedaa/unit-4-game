@@ -7,6 +7,18 @@ body {
   text-align: center;
 }
 
+#ballOne,
+#ballTwo,
+#ballThree,
+#ballFour {
+  opacity: 100%;
+}
+
+.ballPicture {
+  height: 60px;
+  width: 60px;
+  /* opacity: 1; */
+}
 .wrapper {
   padding-bottom: 10px;
   padding-top: 10px;
@@ -19,9 +31,4 @@ body {
   opacity: 0.5;
   color: white;
   /* margin-left: 400px; */
-}
-
-.ballPicture {
-  height: 60px;
-  width: 60px;
 }

@@ -51,6 +51,7 @@ var startGame = function() {
   $("#finalScore").text(currentScore);
   $("#numberToGet").text(numberToGet);
 
+  //printed out the numbers on each ball so i know for later
   console.log("ball one", soccerBall.ballOne.value);
   console.log("ball two", soccerBall.ballTwo.value);
   console.log("ball three", soccerBall.ballThree.value);
@@ -61,12 +62,21 @@ var startGame = function() {
 var checkToWin = function() {
   //comparing numberToGet to finalScore
   if (currentScore > numberToGet) {
-    alert("lost");
+    $("#finalScore").text(currentScore);
+    alert(
+      currentScore +
+        " " +
+        "Is greater than" +
+        " " +
+        numberToGet +
+        " " +
+        "You Lose!"
+    );
     lossCount++;
     $("#numberLosses").text(lossCount);
     startGame();
   } else if (currentScore === numberToGet) {
-    alert("won");
+    alert(currentScore + " " + "Matches The Number To Get You Win");
     winCount++;
     $("#numberWins").text(winCount);
     startGame();
