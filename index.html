@@ -1,57 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Soccer Ball Number Collector!</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-        <section class="start">
 
-            <ul>
-          <h1>Soccer Ball Number Collector!</h1>
-          <p id="instructions">You will be given a random number at the start of the game</p>
-          
-          <p id="instructions">There are four soccer balls below. By clicking on a ball you will add a specific amount of points to your total score.</p>
-         
-          <p id="instructions">You win the game by matching your total score to the random number (Number To Get), you lose the game if your total score goes above the random number.</p>
-         
-          <p id="instructions">The value of each ball is hidden form you until you click on it</p>
-         
-          <p id="instructions">Each time the game starts, the values of each ball will change</p>
-        
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Soccer Ball Number Collector!</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+</head>
 
-          <div class="numberDisplayed">
-            <h2>Number To Get: <span id="numberToGet"></span></h2>
-        </div>
+<body>
+  <div class="wrapper">
+    <section class="start">
 
-        
-        <div class="totalScore">
-          <h2>Your total score is: <span id="finalScore"></span></h2>
-        <span id="result"></span>
-        </div>
+      <ul>
+        <h1>Soccer Ball Number Collector!</h1>
+        <p id="instructions">You will be given a random number at the start of the game</p>
 
-        
-        <div class="winsAndLosses">
-          <h4>Wins: <span id= "numberWins"></span></h4>
-          <h4>Losses: <span id= "numberLosses"></span></h4>
-        </div>
+        <p id="instructions">There are four soccer balls below. By clicking on a ball you will add a specific amount of
+          points to your total score.</p>
 
-        <div class="soccerBalls">
-            <img src="assets/images/Soccer-Ball.png" class=ballPicture id="ballOne" alt="First ball">
-            <img src="assets/images/Soccer-Ball.png" class=ballPicture id="ballTwo" alt="Second ball">
-            <img src="assets/images/Soccer-Ball.png" class=ballPicture id="ballThree" alt="Third ball">
-            <img src="assets/images/Soccer-Ball.png" class=ballPicture id="ballFour" alt="Fourth Ball">
-        </div>
-        
+        <p id="instructions">You win the game by matching your total score to the random number (Number To Get), you
+          lose the game if your total score goes above the random number.</p>
+
+        <p id="instructions">The value of each ball is hidden form you until you click on it</p>
+
+        <p id="instructions">Each time the game starts, the values of each ball will change</p>
+
+      </ul>
+
+      <div class="numberDisplayed">
+        <h2>Number To Get: <span id="numberToGet"></span></h2>
       </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
-  </body>
+
+      <div class="totalScore">
+        <h2>Your total score is: <span id="finalScore"></span></h2>
+        <span id="result"></span>
+      </div>
+
+
+      <div class="winsAndLosses">
+        <h4>Wins: <span id="numberWins"></span></h4>
+        <h4>Losses: <span id="numberLosses"></span></h4>
+      </div>
+
+      <div class="soccerBalls">
+        <img src="assets/images/Soccer-Ball.png" class=ballPicture id="ballOne" alt="First ball">
+        <img src="assets/images/Soccer-Ball.png" class=ballPicture id="ballTwo" alt="Second ball">
+        <img src="assets/images/Soccer-Ball.png" class=ballPicture id="ballThree" alt="Third ball">
+        <img src="assets/images/Soccer-Ball.png" class=ballPicture id="ballFour" alt="Fourth Ball">
+      </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+
 </html>
