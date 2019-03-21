@@ -6,6 +6,10 @@ body {
   font-size: 1em;
   text-align: center;
 }
+html {
+  cursor: url(../images/cursor3.jpg), auto;
+  
+}
 
 #ballOne,
 #ballTwo,
